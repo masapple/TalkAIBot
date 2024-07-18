@@ -30,8 +30,8 @@ struct ChatApiModelSettingView: View {
             print("chatApiModel: \(SettingsModel.shared.chatApiModel)")
             selectedItem = SettingsModel.shared.chatApiModel.rawValue
         }
-        .onChange(of: selectedItem) {
-            SettingsModel.shared.chatApiModel = ChatApiModelSettingValue(rawValue: selectedItem ?? 0) ?? .gpt4_o
+        .onChange(of: selectedItem) { val in
+            SettingsModel.shared.chatApiModel = ChatApiModelSettingValue(rawValue: val ?? 0) ?? .gpt4_o
         }
     }
 }
